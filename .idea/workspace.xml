@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c171a51-99c3-4242-91a5-e43ebeea83d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/schema.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,7 @@
       <workItem from="1680275786380" duration="1540000" />
       <workItem from="1680277532266" duration="140000" />
       <workItem from="1680277691099" duration="131000" />
-      <workItem from="1680277841363" duration="1007000" />
+      <workItem from="1680277841363" duration="2743000" />
     </task>
     <servers />
   </component>
