@@ -1,37 +1,29 @@
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import { GraphQLContext } from "./context";
 // @ts-ignore
 import typeDefs from "./schema.graphql";
-
-type Link = {
-  id: string;
-  url: string;
-  description: string;
-}
-
-const links: Link[] = [{
-  id: 'link-0',
-  url: 'www.howtographql.com',
-  description: 'Fullstack tutorial for GraphQL'
-}]
+import { Link } from "@prisma/client";
 
 const resolvers = {
   Query: {
-    info: () => `This is the API of a news app.`,
-    feed: () => links,
+    info: () => `This is the API of a Hackernews Clone`,
+    feed: async (parent: unknown, args: {}, context: GraphQLContext) => {
+      return context.prisma.link.findMany();
+    },
   },
   Mutation: {
-    post: (parent: unknown, args: { description: string, url: string }) => {
-      let idCount = links.length;
-
-      const link: Link = {
-        id: `link-${idCount++}`,
-        description: args.description,
-        url: args.url,
-      };
-
-      links.push(link);
-
-      return link;
+    post: async (
+      parent: unknown,
+      args: { description: string, url: string },
+      context: GraphQLContext
+    ) => {
+      const newLink = context.prisma.link.create({
+        data: {
+          url: args.url,
+          description: args.description,
+        },
+      });
+      return newLink;
     },
   },
 };
